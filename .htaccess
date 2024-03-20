@@ -1,0 +1,29 @@
+# ▓▓▓▓Dev by Mari05liM▓▓▓▓
+# mariodev@outlook.com.br
+
+# Força o uso de HTTPS
+Header always set Content-Security-Policy: upgrade-insecure-requests
+
+# Páginas de erro 404 e 500
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Timezone
+#SetEnv TZ America/Sao_Paulo
+
+# Habilita o mod_rewrite
+RewriteEngine On
+
+# Define a pasta raiz do site
+RewriteBase /fwlink
+
+# Redireciona URLs específicas para determinadas páginas
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^([a-zA-Z0-9]+)?$ index.php?id=$1 [L]
+
+# Remove a extensão .php das URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]
