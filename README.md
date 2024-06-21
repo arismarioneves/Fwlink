@@ -3,6 +3,7 @@ O Fwlink é um projeto de encurtador de URLs.
 
 ## Funcionalidades
 Encurtar URL: Recebe uma URL através de uma requisição e a armazena no banco de dados, retornando um ID curto.
+
 Redirecionar URL: Redireciona para a URL original baseada no ID fornecido na requisição.
 
 ## Uso
